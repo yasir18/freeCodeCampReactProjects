@@ -1,5 +1,14 @@
-.App {
-  text-align: center;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: "center";
 }
 
 .App-logo {
