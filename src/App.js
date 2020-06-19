@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import RandomQuoteGenerator from "./components/RandomQuoteGenerator";
+import MarkdownPreviewer from "./components/MarkdownPreviewer";
 
 function App() {
   return (
@@ -11,11 +12,12 @@ function App() {
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-around",
         width: "100%",
       }}
     >
-      <RandomQuoteGenerator />
+      {/* <RandomQuoteGenerator /> */}
+      <MarkdownPreviewer />
     </div>
   );
 }
