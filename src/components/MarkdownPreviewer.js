@@ -42,14 +42,13 @@ const MarkdownPreviewer = () => {
     ![React Logo w/ Text](https://goo.gl/Umyytc)
     `
   );
-  let htmlVar = marked(editorText);
   function createMarkup() {
-    return { __html: htmlVar };
+    return { __html: marked(editorText) };
   }
   console.log(editorText);
   return (
     <>
-      <div style={{ width: "40vw" }}>
+      <div style={{ width: "40vw", marginRight: "5%" }}>
         <h3>Editor</h3>
         <textarea
           style={{ height: "60vh", width: "40vw", border: "2px solid black" }}
@@ -65,7 +64,7 @@ const MarkdownPreviewer = () => {
           id="preview"
           style={{
             height: "60vh",
-            overflow: "auto",
+            overflow: "scroll",
             width: "40vw",
             padding: "0 1em",
             border: "2px solid black",
