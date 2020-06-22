@@ -17,6 +17,9 @@ const Home = () => {
         <li class="list-group-item">
           <Link to="/markdownPreviewer">Markdown Previewer</Link>
         </li>
+        <li class="list-group-item">
+          <Link to="/drumMachine">Drum Machine</Link>
+        </li>
       </ul>
     </div>
   );

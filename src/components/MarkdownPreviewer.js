@@ -68,6 +68,7 @@ const MarkdownPreviewer = () => {
             width: "40vw",
             padding: "0 1em",
             border: "2px solid black",
+            backgroundColor: "#fab1a0",
           }}
           dangerouslySetInnerHTML={createMarkup()}
         ></div>
