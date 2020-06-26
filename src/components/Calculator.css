@@ -1,0 +1,46 @@
+#keysContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+.buttons {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.buttons:hover {
+  color: white;
+  outline: 0.05em solid white;
+  z-index: 3;
+}
+
+#display {
+  border: 1px solid black;
+  background-color: #6ab04c;
+  width: 400px;
+}
+
+#equals {
+  flex: 2;
+  background-color: #e74c3c;
+}
+
+#clear {
+  background-color: #e74c3c;
+}
+/* 
+#equals {
+  background-color: #6ab04c;
+}
+
+#add,
+#subtract,
+#multiply,
+#divide {
+  background-color: #6c5ce7;
+} */

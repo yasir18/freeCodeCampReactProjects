@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import marked from "marked";
 
 const MarkdownPreviewer = () => {
-  const [editorText, setEditorText] = React.useState(
-    `# Hi!
-
-    ## Welcome to my React previewer
+  const [editorText, setEditorText] = useState(
+    `# Hi! 
+## Welcome to my React previewer    
+Heres some code, \`<div></div>\`, between 2 backticks.
     
-    Heres some code, \`<div></div>\`, between 2 backticks.
-    
-    \`\`\`
+\`\`\`
     // this is multi-line code:
     
     function anotherExample(firstLine, lastLine) {
@@ -17,35 +15,34 @@ const MarkdownPreviewer = () => {
         return multiLineCode;
       }
     }
-    \`\`\`
+\`\`\`
     
-    You can also make text **bold**
-    Or _italic_.
-    Or **_both!_**
-    And  ~~cross stuff out~~ if you want to.
+You can also make text **bold**
+Or _italic_.
+Or **_both!_**
+And  ~~cross stuff out~~ if you want to.
     
-    There's also [links](https://codepen.io/bmansk14/), and
-    > Block Quotes
+There's also [links](https://codepen.io/bmansk14/), and
+> Block Quotes
     
-    - And of course there are lists.
-      - Some are bulleted.
-         - With different indentation levels.
-            - That look like this.
+- And of course there are lists.
+  - Some are bulleted.
+   - With different indentation levels.
+   - That look like this.
     
     
-    1. And there are numbererd lists too.
-    1. Use just 1s if you want! 
-    1. But the list goes on...
-    - Even if you use dashes or asterisks.
-    * And last but not least, let's not forget embedded images:
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
     
-    ![React Logo w/ Text](https://goo.gl/Umyytc)
+![React Logo w/ Text](https://goo.gl/Umyytc)
     `
   );
-  function createMarkup() {
+  const createMarkup = () => {
     return { __html: marked(editorText) };
-  }
-  console.log(editorText);
+  };
   return (
     <>
       <div style={{ width: "40vw", marginRight: "5%" }}>

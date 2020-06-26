@@ -4,6 +4,27 @@ import "./DrumMachine.css";
 const DrumMachine = () => {
   const [displayString, setDisplayString] = useState("Drum Machine");
 
+  useEffect(() => {
+    document.addEventListener("keydown", handler);
+
+    return () => {
+      console.log("return useEffect");
+      document.removeEventListener("keydown", handler);
+    };
+  });
+
+  const handler = (e) => {
+    console.log("event listener registered");
+    let keypress = String.fromCharCode(e.keyCode);
+    let audioElement = document.getElementById(keypress);
+    let displayElement = document.getElementById("display");
+    console.log(String.fromCharCode(e.keyCode));
+    if (audioElement) {
+      audioElement.play();
+      displayElement.innerText = audioElement.parentNode.id;
+    }
+  };
+
   const data = [
     {
       id: "Heater 1",
@@ -66,17 +87,6 @@ const DrumMachine = () => {
     </div>
   );
 };
-
-document.addEventListener("keydown", (e) => {
-  let keypress = String.fromCharCode(e.keyCode);
-  let audioElement = document.getElementById(keypress);
-  let displayElement = document.getElementById("display");
-  console.log(String.fromCharCode(e.keyCode));
-  if (audioElement) {
-    audioElement.play();
-    displayElement.innerText = audioElement.parentNode.id;
-  }
-});
 
 const Drumpad = (props) => {
   //   React.useEffect(()=>{

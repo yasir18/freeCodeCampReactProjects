@@ -1,6 +1,4 @@
 import React from "react";
-import RandomQuoteGenerator from "./RandomQuoteGenerator";
-import MarkdownPreviewer from "./MarkdownPreviewer";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -19,6 +17,9 @@ const Home = () => {
         </li>
         <li class="list-group-item">
           <Link to="/drumMachine">Drum Machine</Link>
+        </li>
+        <li class="list-group-item">
+          <Link to="/calculator">Calculator</Link>
         </li>
       </ul>
     </div>
