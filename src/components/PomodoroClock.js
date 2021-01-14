@@ -1,19 +1,19 @@
-import React from "react";
-import "./PomodoroClock.css";
+import React from 'react';
+import './PomodoroClock.css';
 
 const PomodoroClock = () => {
-	const audio = document.getElementById("beep");
+	//const audio = document.getElementById("beep");
 	const [breakLength, setBreakLength] = React.useState(5);
 	const [sessionLength, setSessionLength] = React.useState(25);
-	const [timerLength, setTimerLength] = React.useState(10);
+	const [timerLength, setTimerLength] = React.useState(1500);
 	const [isPlaying, setIsPlaying] = React.useState(false);
 	const [intervalId, setIntervalId] = React.useState();
 	const [isSession, setIsSession] = React.useState(true);
 
 	React.useEffect(() => {
-		console.log("use efffect timerlength " + timerLength);
+		console.log('use efffect timerlength ' + timerLength);
 		if (timerLength === 0) {
-			console.log("audio");
+			console.log('audio');
 			//audio.play()
 			// clearInterval(intervalId);
 			// setIsPlaying(false);
@@ -29,10 +29,10 @@ const PomodoroClock = () => {
 
 	const convertTime = () => {
 		let mins = Math.floor(timerLength / 60);
-		mins = mins < 10 ? "0" + mins : mins;
+		mins = mins < 10 ? '0' + mins : mins;
 		let secs = timerLength % 60;
-		secs = secs < 10 ? "0" + secs : secs;
-		return mins + ":" + secs;
+		secs = secs < 10 ? '0' + secs : secs;
+		return mins + ':' + secs;
 	};
 
 	const start = () => {
@@ -60,7 +60,7 @@ const PomodoroClock = () => {
 		setIsPlaying(false);
 		setIsSession(true);
 	};
-	console.log("rerender");
+	console.log('rerender');
 
 	const increaseBreak = () => {
 		if (isSession && breakLength < 60)
@@ -144,8 +144,8 @@ const PomodoroClock = () => {
 			<div id="timerBox">
 				<div id="timer">
 					<div id="timer-label">
-						{" "}
-						{isSession ? "Session" : "Break"}{" "}
+						{' '}
+						{isSession ? 'Session' : 'Break'}{' '}
 					</div>
 					<div id="time-left">{convertTime()}</div>
 				</div>
@@ -153,7 +153,7 @@ const PomodoroClock = () => {
 				<div id="buttons">
 					<button id="start_stop" class="button" onClick={start}>
 						<i
-							className={`fa fa-${isPlaying ? "pause" : "play"}`}
+							className={`fa fa-${isPlaying ? 'pause' : 'play'}`}
 						/>
 					</button>
 					<button id="reset" class="button" onClick={reset}>
